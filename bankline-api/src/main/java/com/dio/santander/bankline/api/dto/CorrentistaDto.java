@@ -1,5 +1,6 @@
 package com.dio.santander.bankline.api.dto;
 
+import com.dio.santander.bankline.api.entity.ContaEntity;
 import com.dio.santander.bankline.api.entity.CorrentistaEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,14 +12,12 @@ public class CorrentistaDto {
     private Integer id;
     private String nome;
     private String cpf;
-    private Long conta_numero;
-    private Double conta_saldo;
+    private ContaEntity conta;
 
     public CorrentistaDto(CorrentistaEntity correntistaEntity) {
         this.id = correntistaEntity.getId();
         this.nome = correntistaEntity.getNome();
         this.cpf = correntistaEntity.getCpf();
-        this.conta_numero = correntistaEntity.getConta().getNumero();
-        this.conta_saldo = correntistaEntity.getConta().getSaldo();
+        this.conta = correntistaEntity.getConta();
     }
 }

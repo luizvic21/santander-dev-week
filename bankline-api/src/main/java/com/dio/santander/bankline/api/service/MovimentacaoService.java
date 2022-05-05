@@ -30,4 +30,8 @@ public class MovimentacaoService {
         return movimentacaoRepository.findAll();
     }
 
+    public List<MovimentacaoEntity> findByContaId(Integer contaId) {
+        return movimentacaoRepository.findByContaId(contaId);
+    }
+
 }

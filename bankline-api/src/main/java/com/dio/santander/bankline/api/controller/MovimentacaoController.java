@@ -24,4 +24,9 @@ public class MovimentacaoController {
     public void save(@RequestBody MovimentacaoDto movimentacaoDto) {
         movimentacaoService.save(movimentacaoDto);
     }
+
+    @GetMapping("/{contaId}")
+    public List<MovimentacaoDto> findByContaId(@PathVariable Integer contaId) {
+        return movimentacaoService.findByContaId(contaId).stream().map(MovimentacaoDto::new).collect(Collectors.toList());
+    }
 }

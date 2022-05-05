@@ -37,7 +37,7 @@ public class MovimentacaoEntity {
 
     public MovimentacaoEntity(MovimentacaoDto movimentacaoDto) {
         this.dataHora = LocalDateTime.now();
-        this.descricao = movimentacaoDto.getDescicao();
+        this.descricao = movimentacaoDto.getDescricao();
         this.tipo = movimentacaoDto.getTipo();
         this.valor = this.tipo.equals(EnumMovimentacaoTipo.RECEITA) ? movimentacaoDto.getValor() : movimentacaoDto.getValor() * -1;
         this.contaId = movimentacaoDto.getContaId();
